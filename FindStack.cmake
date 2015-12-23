@@ -1,9 +1,6 @@
 include (FindPackageHandleStandardArgs)
 
-find_program (
-    STACK_EXECUTABLE stack
-    PATH_SUFFIXES bin
-    )
+find_program (STACK_EXECUTABLE stack PATH_SUFFIXES bin)
 
 if (STACK_EXECUTABLE)
   execute_process (
@@ -14,7 +11,7 @@ if (STACK_EXECUTABLE)
 endif()
 
 find_package_handle_standard_args (Stack
-"Couldn't find the required version of stack."
+  "Couldn't find the required version of stack. See http://docs.haskellstack.org/en/stable/install_and_upgrade.html#ubuntu"
 STACK_EXECUTABLE STACK_VERSION)
 
 mark_as_advanced (STACK_EXECUTABLE)
